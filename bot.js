@@ -9,6 +9,15 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
+    
+client.on("ready", () =>{
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        game: {
+            name: "Using !help",  //The message shown
+            type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }
 });
 
 // THIS  MUST  BE  THIS  WAY
