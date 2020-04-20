@@ -8,9 +8,9 @@ const actvs = [
 ];
 
 client.on('ready', () => {
-    client.user.setActivity(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
+    client.user.setStatus(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
     setInterval(() => {
-        client.user.setActivity(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
+        client.user.setStatus(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
     }, 10000);
 });
 
