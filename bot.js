@@ -8,6 +8,13 @@ const actvs = [
 ];
 
 client.on('ready', () => {
+    client.user.setActivity(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
+    setInterval(() => {
+        client.user.setActivity(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
+    }, 10000);
+});
+
+client.on('ready', () => {
     console.log('I am ready!');
 });
 
@@ -17,12 +24,4 @@ client.on('message', message => {
     }
 });
 
-client.on('ready', () => {
-    client.user.setActivity(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
-    setInterval(() => {
-        client.user.setActivity(actvs[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
-    }, 10000);
-});
-
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot 
+client.login(process.env.BOT_TOKEN); 
